@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="netflixApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Netflix Sign In</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="SignInController">
+
+    <div class="login-container">
+        <h1>Sign In</h1>
+        <form name="signInForm" ng-submit="submitForm()">
+            <div class="form-group" ng-class="{ 'has-error': signInForm.email.$invalid && signInForm.email.$touched }">
+                <input type="email" name="email" ng-model="user.email" placeholder="Email" required>
+                <div class="error" ng-show="signInForm.email.$invalid && signInForm.email.$touched">Please enter a valid email.</div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': signInForm.password.$invalid && signInForm.password.$touched }">
+                <input type="password" name="password" ng-model="user.password" placeholder="Password" required>
+                <div class="error" ng-show="signInForm.password.$invalid && signInForm.password.$touched">Password is required.</div>
+            </div>
+            <button type="submit" ng-disabled="signInForm.$invalid">Sign In</button>
+        </form>
+        <div class="links">
+            <a href="#" ng-click="forgotPassword()">Forgot Password?</a>
+            <hr class="divider">
+            <a href="#create-account">Create Account</a>
+        </div>
+        <div class="message" ng-if="message">{{ message }}</div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

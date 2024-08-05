@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Videos</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #181818; /* Dark background color */
+            color: white;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: url('https://assets.nflxext.com/ffe/siteui/vlv3/41d52402-ded0-41b7-8d67-30e2aecd4de7/ca615d9b-c3d3-4ee1-8bc8-51eb61cc3c73/US-en-20230501-popsignuptwoweeks-perspective_alpha_website_large.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .header {
+            width: 100%;
+            background-color: rgba(20, 20, 20, 0.8);
+            box-shadow: 0 0 10px white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .header img {
+            height: 50px;
+            flex-shrink: 0;
+        }
+        .header nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+        .header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            margin: 0 15px;
+            padding: 10px 20px;
+            border: 2px solid transparent;
+            border-radius: 20px;
+            background-color: rgba(40, 40, 40, 0.8);
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+        .header nav a:hover {
+            color: #e50914;
+            background-color: rgba(60, 60, 60, 0.8);
+            border-color: #e50914;
+        }
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 120px 20px 20px;
+            width: 100%;
+        }
+        video {
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px white;
+            width: 100%;
+            height: 450px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px white;
+            z-index: 1000;
+        }
+        video:focus {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2000;
+            box-shadow: none;
+        }
+        .iframe-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 120px 20px 20px;
+            width: 100%;
+        }
+        iframe {
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px white;
+            width: 100%;
+            height: 450px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        iframe:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px white;
+            z-index: 1000;
+        }
+        iframe:focus {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2000;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo">
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="video.html">TV Shows</a>
+            <a href="video.html">Movies</a>
+            <a href="video.html">Latest</a>
+            <a href="video.html">My List</a>
+        </nav>
+    </div>
+    <div class="video-container">
+        <video controls>
+            <source src="v3.mp4" type="video/mp4"> 
+        </video>
+        <video controls>
+            <source src="v7.mp4" type="video/mp4">
+        </video>
+        <video controls>
+            <source src="v1.mp4" type="video/mp4">
+        </video>
+        <video controls>
+            <source src="v5.mp4" type="video/mp4">
+        </video>
+        <video controls>
+            <source src="v2.mp4" type="video/mp4">
+        </video>
+        
+    </div>
+    <div class="iframe-container">
+        <iframe src="https://www.youtube.com/embed/MUMCZZl9QCY?si=q884nMfWzkO0F37Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/EefDoCweGcM?si=mYA6WW9Tmw-I_Rud" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/5oH9Nr3bKfw?si=8K2-MQkhHODCpWuX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/MUMCZZl9QCY?si=q884nMfWzkO0F37Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/lXs8BRnrW_M?si=IaC-_aDYQoHoJVyA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/it1rTvBcfRg?si=61GDWKeH13FyUoER" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/5oH9Nr3bKfw?si=8K2-MQkhHODCpWuX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/lXs8BRnrW_M?si=IaC-_aDYQoHoJVyA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+       </div> 
+</body>
+</html>
